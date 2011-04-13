@@ -2,10 +2,10 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ey_s3_backup}
-  s.version = "0.0.6"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Railsformers"]
+  s.authors = ["3Lancers"]
   s.date = %q{2010-11-05}
   s.description = %q{Backup to S3}
   s.email = %q{info@railsformers.com}

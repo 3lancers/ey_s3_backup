@@ -1,6 +1,8 @@
 Source:
 
-http://github.com/railsformers/ey_s3_backup
+http://github.com/3lancers/ey_s3_backup
+
+For Rails3 application, make sure to use newest version. Newest version is compatible with older version of Rails
 
 == Installing ey_s3_backup
 

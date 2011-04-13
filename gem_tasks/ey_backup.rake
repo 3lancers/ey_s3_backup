@@ -5,7 +5,6 @@ require 'fileutils'
 
 class Backup
   def initialize(type)
-    require File.join('config/environment')
     begin
       @cfg = YAML::load(File.open(File.join(RAILS_ROOT, 'config', 'ey_backup.yml')))
       @file_name = ""
@@ -118,13 +117,13 @@ desc "Backup project to S3"
 namespace :ey_s3_backup do
   
   desc "Backup project db to S3"
-  task :db do
+  task :db => :environment do
     Backup.new('database')
     puts "\n-- End of backup --"
   end
 
   desc "Backup project files to S3"
-  task :files do
+  task :files => :environment do
     Backup.new('files')
     puts "\n-- End of backup --"
   end
