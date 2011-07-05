@@ -35,3 +35,10 @@ engine_yard:
   application_name: *engine yard application name*
   backup_tmp_dir: /tmp *temporary dir for compressed backups*
   pubic_files_dir: public_files *relative to shared directory of project*
+
+
+== Server custom recipes
+
+cd /home/deploy && git clone git://github.com/3lancers/ey-cloud-recipes.git && cd ey-cloud-recipes
+ey recipes upload -e environment_name
+ey recipes apply -e environment_name # for immediate action
