@@ -6,7 +6,7 @@ require 'fileutils'
 class Backup
   def initialize(type)
     begin
-      @cfg = YAML::load(File.open(File.join(RAILS_ROOT, 'config', 'ey_backup.yml')))
+      @cfg = YAML::load(File.open(File.join(Rails.root, 'config', 'ey_backup.yml')))
       @file_name = ""
       @backup_dir = @cfg['engine_yard']['backup_tmp_dir']
       @target_bucket = @cfg['amazon_s3']['bucket']
@@ -15,8 +15,8 @@ class Backup
       @type=type
       puts "#{@backup_dir} #{@target_bucket} #{@application} #{@keep} #{@type}"
       self.run
-    rescue
-      exit_with_error("error loading configuration ey_backup.yml")
+    rescue Exception => e
+      exit_with_error("error loading configuration ey_backup.yml: " + e.to_s)
     end
   end
   
@@ -60,9 +60,9 @@ class Backup
   end
   
   def dump_db
-    db = ActiveRecord::Base.configurations[RAILS_ENV]['database']
-    username = ActiveRecord::Base.configurations[RAILS_ENV]['username']
-    pass = ActiveRecord::Base.configurations[RAILS_ENV]['password']
+    db = ActiveRecord::Base.configurations[Rails.env]['database']
+    username = ActiveRecord::Base.configurations[Rails.env]['username']
+    pass = ActiveRecord::Base.configurations[Rails.env]['password']
     @file_name = @application + '-' + Date.today.to_s + '-' + Time.now.strftime("%H-%M-%S") + '.sql.gz'
     #puts "mysqldump -p" + pass + " -u " + username + " " + db + " | gzip > " + self.backup_file_name
     system("mysqldump -p" + pass + " -u " + username + " " + db + " | gzip > " + self.backup_file_name)

@@ -2,16 +2,16 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ey_s3_backup}
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["3Lancers"]
-  s.date = %q{2010-11-05}
+  s.date = %q{2011-11-01}
   s.description = %q{Backup to S3}
-  s.email = %q{info@railsformers.com}
+  s.email = %q{info@3lancers.cz}
   s.extra_rdoc_files = ["README.rdoc", "lib/ey_s3_backup.rb"]
   s.files = ["Manifest", "README.rdoc", "Rakefile", "data/before_restart.rb", "data/before_symlink.rb", "data/ey_backup.yml", "data/schedule.rb", "ey_s3_backup.gemspec", "gem_tasks/ey_backup.rake", "gem_tasks/install.rake", "init.rb", "lib/ey_s3_backup.rb"]
-  s.homepage = %q{http://www.railsformers.com}
+  s.homepage = %q{http://3lancers.cz}
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Ey_s3_backup", "--main", "README.rdoc"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{ey_s3_backup}

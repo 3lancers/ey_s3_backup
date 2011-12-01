@@ -9,6 +9,8 @@ For Rails3 application, make sure to use newest version. Newest version is compa
 Add to Gemfile:
 gem "ey_s3_backup", :git => "git://github.com/railsformers/ey_s3_backup.git"
 
+Use version >= 0.2.0 for Rails 3 and version 0.1.0 for pre Rails 3
+
 run bundle install
 
 Add to Rakefile:

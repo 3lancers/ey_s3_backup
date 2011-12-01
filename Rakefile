@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('ey_s3_backup', '0.1.0') do |p|
+Echoe.new('ey_s3_backup', '0.2.0') do |p|
   p.description    = "Backup to S3"
   p.url            = "http://www.3lancers.cz"
   p.author         = "3Lancers"
